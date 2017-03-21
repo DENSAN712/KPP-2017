@@ -108,11 +108,19 @@ atomic<int> a;
 void WorkMutex();
 void ThreadMutexWithNumber(int i);
 
+//Semaphore
+void WorkSemaphore();
+void ThreadSemaphoreWithNumberAndMax(int i, int max);
+
 // Atomic
 void WorkAtomic();
 void IncrementGlobalVar();
 void DecrementGlobalVar();
 void ChangeGlobalVar();
+
+//Push-Thread
+void WorkPullThread();
+void CashThread();
 
 int main()
 {
@@ -137,9 +145,9 @@ int main()
 		switch (i)
 		{
 			case 1: WorkMutex(); break;
-			case 2: break;
+			case 2: WorkSemaphore(); break;
 			case 3: WorkAtomic(); break;
-			case 4: break;
+			case 4: WorkPullThread(); break;
 		}
 	} while (i < 5 && i > 0);
 
@@ -193,6 +201,56 @@ void ThreadMutexWithNumber(int i)
 	cout << "Касса под номеров " << i << " свободна." << endl;
 }
 
+//Демонстрация работы механизма: Semaphore
+void WorkSemaphore()
+{
+	system("cls");
+
+	int threadsCount = 4;
+
+	cout << "Интервалы времени t1 < t2: ";
+	cin >> t1 >> t2;
+
+	if (t1 >= t2)
+	{
+		return;
+	}
+
+	thread **threads = new thread*[threadsCount];
+
+	for (int i = 0; i < threadsCount; i++)
+	{
+		threads[i] = new thread(ThreadSemaphoreWithNumberAndMax, i + 1, threadsCount);
+	}
+
+	for (int i = 0; i < threadsCount; i++)
+	{
+		threads[i] -> join();
+		delete threads[i];
+	}
+
+	delete threads;
+
+	system("pause");
+}
+
+void ThreadSemaphoreWithNumberAndMax(int i, int max)
+{
+	int t = t1 + rand() % t2;
+
+	unique_lock<std::mutex> lck(mut);
+	while (i != max - id)
+	{
+		cv.wait(lck);
+	}
+
+	id++;
+	cout << "Касса " << i << "/" << max << " " << endl;
+	Sleep(t * 1000);
+	cout << "Касса " << i << "/" << max << " завершила обслуживание. " << endl;
+	cv.notify_all();
+}
+
 //Демонстрация работы механизма: Atomic
 void WorkAtomic()
 {
@@ -237,4 +295,32 @@ void ChangeGlobalVar()
 		a += ch;
 		cout << "В кассу добавились чаевые. Текущая сумма = " << a << endl;
 	}
+}
+
+//Демонстрация работы механизма: Pull-Thread
+void WorkPullThread()
+{
+	system("cls");
+
+	int threadCount = 4;
+
+	cout << "Количество потоков: ";
+	cin >> threadCount;
+
+	ThreadPool threadPool(2);.
+
+	for (int i = 0; i < threadCount; i++)
+	{
+		threadPool.enqueue(&CashThread);
+	}
+
+	system ("pause");
+}
+
+void CashThread()
+{
+	cout << "Касса занята" << endl;
+	int ch = 1000 + rand() % 10000;
+	Sleep(1000);
+	cout << "Касса освободилась" << endl;
 }

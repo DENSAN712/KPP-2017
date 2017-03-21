@@ -5,11 +5,8 @@
 #include <windows.h>
 #include <condition_variable>
 #include <atomic>
-#include <thread>
-#include <mutex>
 #include <vector>
 #include <deque>
-#include <condition_variable>
  
 // Класс оболочка для работы с потоками
 class ThreadPool;

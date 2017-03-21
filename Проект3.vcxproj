@@ -12,7 +12,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Lab_1.cpp" />
-    <ClCompile Include="Исходный код.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{F4296816-484E-4457-A540-80EE56B15EA1}</ProjectGuid>

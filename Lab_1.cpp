@@ -140,9 +140,9 @@ int main()
 		switch (i)
 		{
 			case 1: WorkMutex(); break;
-			case 2: WorkSemaphore(); break;
+			case 2: break;
 			case 3: WorkAtomic(); break;
-			case 4: WorkPullThread(); break;
+			case 4: break;
 		}
 	} while (i < 5 && i > 0);
 

@@ -1,20 +1,14 @@
-﻿Построение начато 20.03.2017 22:02:21.
+﻿Построение начато 21.03.2017 11:17:14.
      1>Проект "C:\Users\User\documents\visual studio 2012\Projects\Проект3\Проект3\Проект3.vcxproj" в узле 2 (целевые объекты Build).
      1>ClCompile:
-         D:\C(Plus)\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /openmp /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt "Исходный код.cpp"
-         Исходный код.cpp
-     1>c:\users\user\documents\visual studio 2012\projects\проект3\проект3\исходный код.cpp(13): warning C4101: allt: неиспользованная локальная переменная
-     1>c:\users\user\documents\visual studio 2012\projects\проект3\проект3\исходный код.cpp(13): warning C4101: allp: неиспользованная локальная переменная
-     1>c:\users\user\documents\visual studio 2012\projects\проект3\проект3\исходный код.cpp(12): warning C4101: f: неиспользованная локальная переменная
-     1>c:\users\user\documents\visual studio 2012\projects\проект3\проект3\исходный код.cpp(12): warning C4101: t2: неиспользованная локальная переменная
-     1>c:\users\user\documents\visual studio 2012\projects\проект3\проект3\исходный код.cpp(12): warning C4101: t1: неиспользованная локальная переменная
-     1>c:\users\user\documents\visual studio 2012\projects\проект3\проект3\исходный код.cpp(13): warning C4101: numt: неиспользованная локальная переменная
+         D:\C(Plus)\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /openmp /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt Lab_1.cpp
+         Lab_1.cpp
+     1>c:\users\user\documents\visual studio 2012\projects\проект3\проект3\lab_1.cpp(125): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
        Link:
          D:\C(Plus)\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\User\documents\visual studio 2012\Projects\Проект3\Debug\Проект3.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\User\documents\visual studio 2012\Projects\Проект3\Debug\Проект3.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\User\documents\visual studio 2012\Projects\Проект3\Debug\Проект3.lib" /MACHINE:X86 Debug\Lab_1.obj
-         "Debug\Исходный код.obj"
          Проект3.vcxproj -> C:\Users\User\documents\visual studio 2012\Projects\Проект3\Debug\Проект3.exe
      1>Построение проекта "C:\Users\User\documents\visual studio 2012\Projects\Проект3\Проект3\Проект3.vcxproj" завершено (целевые объекты Build).
 
 Построение успешно завершено.
 
-Затраченное время: 00:00:01.32
+Затраченное время: 00:00:08.48
